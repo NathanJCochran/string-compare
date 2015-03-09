@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define BUF_SIZE 4096
+#define NUM_ASCII 128
 
 void get_input(char * buffer);
 int compare(char * string1, char * string2);
@@ -26,18 +27,20 @@ int main(int argc, char * argv[]) {
 }
 
 int compare(char * string1, char * string2) {
-    int i, j;
+    int i;
     int size1 = (unsigned) strlen(string1) - 1; // For newline
     int size2 = (unsigned) strlen(string2) - 1; // For newline
     int count = 0;
+    int hash[NUM_ASCII] = {0};
 
     for(i = 0; i < size1; i++) {
-        for(j = 0; j < size2; j++) {
-            if(string1[i] == string2[j]) {
-                count++;
-            }
-        }
+        hash[string1[i]]++;
     };
+
+    for(i = 0; i < size2; i++) {
+        count += hash[string2[i]];
+    }
+
     return count;
 }
 

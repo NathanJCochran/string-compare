@@ -13,14 +13,20 @@ int main(int argc, char * argv[]) {
     char string2[BUF_SIZE];
     int count;
 
-    printf("Hello!\n");
-    printf("Please enter your first string: ");
-    get_input(string1);
+    if(argc != 3) {
+        printf("Hello!\n");
+        printf("Please enter your first string: ");
+        get_input(string1);
 
-    printf("Please enter your second string: ");
-    get_input(string2);
+        printf("Please enter your second string: ");
+        get_input(string2);
 
-    count = compare(string1, string2);
+        count = compare(string1, string2);
+    }
+    else {
+        count = compare(argv[1], argv[2]);
+    }
+
     printf("Result: %i\n", count);
 
     return EXIT_SUCCESS;
@@ -28,26 +34,30 @@ int main(int argc, char * argv[]) {
 
 int compare(char * string1, char * string2) {
     int i;
-    int size1 = (unsigned) strlen(string1) - 1; // For newline
-    int size2 = (unsigned) strlen(string2) - 1; // For newline
+    int size1 = (unsigned) strlen(string1);
+    int size2 = (unsigned) strlen(string2);
     int count = 0;
     int hash[NUM_ASCII] = {0};
 
     for(i = 0; i < size1; i++) {
-        hash[string1[i]]++;
+        hash[(int) string1[i]]++;
     };
 
     for(i = 0; i < size2; i++) {
-        count += hash[string2[i]];
+        count += hash[(int) string2[i]];
     }
 
     return count;
 }
 
 void get_input(char * buffer) {
+    unsigned len;
 
     if(fgets(buffer, BUF_SIZE, stdin) == NULL) {
         printf("Error reading stdin into buffer");
         exit(EXIT_SUCCESS);
     }
+
+    len = (unsigned) strlen(buffer);
+    buffer[len - 1] = '\0'; // For newline
 }

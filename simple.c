@@ -12,6 +12,7 @@ int main(int argc, char * argv[]) {
     char string2[BUF_SIZE];
     int count;
 
+    // If command line args were given, use those as the strings:
     if(argc != 3) {
         printf("Hello!\n");
         printf("Please enter your first string: ");
@@ -22,6 +23,7 @@ int main(int argc, char * argv[]) {
 
         count = compare(string1, string2);
     }
+    // Else, prompt the user for strings:
     else {
         count = compare(argv[1], argv[2]);
     }
@@ -31,14 +33,24 @@ int main(int argc, char * argv[]) {
     return EXIT_SUCCESS;
 }
 
+/*
+ *  This is the actual compare method.
+ *  It takes two strings, and returns the number
+ *  of matching characters between them.
+ */
 int compare(char * string1, char * string2) {
     int i, j;
     int size1 = (unsigned) strlen(string1);
     int size2 = (unsigned) strlen(string2);
     int count = 0;
 
+    // Iterate through all characters in first string:
     for(i = 0; i < size1; i++) {
+
+        // And for each character int the second string:
         for(j = 0; j < size2; j++) {
+
+            // If they match, increment the counter:
             if(string1[i] == string2[j]) {
                 count++;
             }
@@ -47,6 +59,11 @@ int compare(char * string1, char * string2) {
     return count;
 }
 
+/*
+ * This method simply gets some input from stdin
+ * and stores it in the given buffer.  Removes
+ * the trailing newline.
+ */
 void get_input(char * buffer) {
     unsigned len;
 

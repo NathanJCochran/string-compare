@@ -7,21 +7,21 @@ And there's a python script to show you why.
 
 ## Compilation:
 
-'make'
+`make`
 
 ## Execution:
 
-The good algorithm: './good'
+The good algorithm: `./good`
 
-The better algorithm: './better'
+The better algorithm: `./better`
 
 The programs will prompt you for input.
 
 Optionally, pass in strings as command line arguments:
 
-'./good "string1" "string2"'
+`./good "string1" "string2"`
 
 ## Test script:
 The test script runs each program several times on input strings of increasing lengths, and outputs the results to the command line.
 
-'./test_runner.py'
+`./test_runner.py`

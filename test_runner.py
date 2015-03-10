@@ -53,7 +53,7 @@ def testProgram(program, str_len):
 
 '''
 Executes the given string-compare program with the provided
-arguments (the strings to compare).Returns the wall-clock
+arguments (the strings to compare). Returns the wall-clock
 time it took to execute (in milliseconds).
 '''
 def timeExecute(program, string1, string2):

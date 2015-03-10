@@ -25,3 +25,6 @@ Optionally, pass in strings as command line arguments:
 The test script runs each program several times on input strings of increasing lengths, and outputs the results to the command line.
 
 `./test_runner.py`
+
+## Clean it up:
+Shit hanging around? Clean it up: `make clean`

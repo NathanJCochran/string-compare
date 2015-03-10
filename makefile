@@ -1,20 +1,20 @@
 CC=gcc
 DEBUG=-g
 CFLAGS=$(DEBUG) -Wall
-PROGS=simple complex
+PROGS=good better
 
 all: $(PROGS)
 
-simple: simple.o
+good: good.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-simple.o: simple.c
+good.o: good.c
 	$(CC) $(CFLAGS) -c $^
 
-complex: complex.o
+better: better.o
 	$(CC) $(CFLAGS) -o $@ $^
 
-complex.o: complex.c
+better.o: better.c
 	$(CC) $(CFLAGS) -c $^
 
 clean:

@@ -6,15 +6,15 @@ import string
 
 SAMPLE_SIZE = 10
 STR_LENS = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384]
-TEST_PROGRAMS = ["./simple", "./complex"]
+TEST_PROGRAMS = ["./good", "./better"]
 
 def main():
     subprocess.call(["make"])
 
     for str_len in STR_LENS:
-        print "For N = " + str(str_len) + ":\n"
+        print "N = " + str(str_len) + ":\n"
         testPrograms(str_len)
-        print "---------------------------------------------"
+        print "------------------------------------------------------------"
 
         
 

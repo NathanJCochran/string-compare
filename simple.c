@@ -40,15 +40,13 @@ int main(int argc, char * argv[]) {
  */
 int compare(char * string1, char * string2) {
     int i, j;
-    int size1 = (unsigned) strlen(string1);
-    int size2 = (unsigned) strlen(string2);
     int count = 0;
 
     // Iterate through all characters in first string:
-    for(i = 0; i < size1; i++) {
+    for(i = 0; string1[i] != '\0'; i++) {
 
         // And for each character int the second string:
-        for(j = 0; j < size2; j++) {
+        for(j = 0; string2[j] != '\0'; j++) {
 
             // If they match, increment the counter:
             if(string1[i] == string2[j]) {

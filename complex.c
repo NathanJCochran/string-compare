@@ -41,20 +41,18 @@ int main(int argc, char * argv[]) {
  */
 int compare(char * string1, char * string2) {
     int i;
-    int size1 = (unsigned) strlen(string1);
-    int size2 = (unsigned) strlen(string2);
     int count = 0;
     int hash[NUM_ASCII] = {0};
 
     // Iterate through each character in the first string.
     // Increment a counter in a hash for each character:
-    for(i = 0; i < size1; i++) {
+    for(i = 0; string1[i] != '\0'; i++) {
         hash[(int) string1[i]]++;
     };
 
     // Iterate through the second string, summing
     // up the counters in the hash for each character:
-    for(i = 0; i < size2; i++) {
+    for(i = 0; string2[i] != '\0'; i++) {
         count += hash[(int) string2[i]];
     }
 

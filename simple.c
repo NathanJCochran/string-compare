@@ -12,7 +12,7 @@ int main(int argc, char * argv[]) {
     char string2[BUF_SIZE];
     int count;
 
-    // If command line args were given, use those as the strings:
+    // If no command line args were given, prompt the user for strings:
     if(argc != 3) {
         printf("Hello!\n");
         printf("Please enter your first string: ");
@@ -23,7 +23,7 @@ int main(int argc, char * argv[]) {
 
         count = compare(string1, string2);
     }
-    // Else, prompt the user for strings:
+    // Else, use the command line args:
     else {
         count = compare(argv[1], argv[2]);
     }

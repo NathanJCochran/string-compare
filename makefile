@@ -18,4 +18,4 @@ complex.o: complex.c
 	$(CC) $(CFLAGS) -c $^
 
 clean:
-	rm -f $(PROGS) *.o *~
+	rm -f $(PROGS) *.o *~ *.pyc

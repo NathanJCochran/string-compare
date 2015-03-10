@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define BUF_SIZE 4096
+#define BUF_SIZE 16384
 
 void get_input(char * buffer);
 int compare(char * string1, char * string2);

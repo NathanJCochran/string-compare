@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define BUF_SIZE 4096
+#define BUF_SIZE 16384
 #define NUM_ASCII 128
 
 void get_input(char * buffer);
